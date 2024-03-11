@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "outDir": "dist",
+        "lib": ["esnext","DOM"],
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "target": "es2015",
+        "strict": true,
+        "resolveJsonModule": true,
+        "noImplicitAny": false,
+        "noImplicitThis": false,
+        "pretty": true,
+        "noEmitOnError": true,
+        "declaration": true,
+        "removeComments": false,
+        "preserveConstEnums": true,
+        "sourceMap": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "typeRoots": [
+            "./node_modules/@types",
+            "./types"
+        ],
+    },
+}

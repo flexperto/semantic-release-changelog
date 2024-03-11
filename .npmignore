@@ -1,0 +1,8 @@
+# Only add patterns explicitly listed (whitelist)
+*
+!.package.json
+!dist/*
+dist/*\.spec\.*
+dist/*\.test\.*
+!CHANGELOG.md
+!README.md

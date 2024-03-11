@@ -1,0 +1,57 @@
+{
+    "name": "@flexperto/semantic-release-changelog",
+    "description": "Generate a changelog from git metadata",
+    "version": "1.0.0",
+    "license": "proprietary",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "engines": {
+        "node": ">=20",
+        "npm": "9"
+    },
+    "scripts": {
+        "build": "rimraf dist && tsc",
+        "graph-dependencies": "npx depcruise 'src' --output-type dot > dependency-graph.dot",
+        "lint": "npm run lint:typescript && npm run lint:eslint",
+        "lint:typescript": "tsc --project tsconfig.json --noEmit",
+        "lint:eslint": "DEBUG=eslint:cli-engine eslint -c .eslintrc.js 'src/**/*.ts'",
+        "test:unit": "jest --config jest.config.js",
+        "dev": "tsc --watch"
+    },
+    "author": "flexperto GmbH",
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com:flexperto/semantic-release-changelog.git"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "./bin/pre-commit",
+            "pre-push": "./bin/pre-push"
+        }
+    },
+    "homepage": "https://github.com/flexperto/semantic-release-changelog#readme",
+    "dependencies": {
+        "@semantic-release/changelog": "^6.0.3"
+    },
+    "devDependencies": {
+        "@types/jest": "^29.2.4",
+        "@types/node": "20.6.1",
+        "@typescript-eslint/eslint-plugin": "^6.15.0",
+        "@typescript-eslint/parser": "^6.15.0",
+        "@typescript-eslint/typescript-estree": "^6.15.0",
+        "dependency-cruiser": "^16.0.0",
+        "eslint": "^8.56.0",
+        "eslint-config-prettier": "^6.7.0",
+        "eslint-plugin-import": "^2.25.3",
+        "eslint-plugin-prettier": "^3.1.1",
+        "eslint-plugin-unused-imports": "^3.0.0",
+        "eslint-plugin-workspaces": "^0.10.0",
+        "husky": "^7.0.4",
+        "jest": "^29.3.1",
+        "prettier": "^2.4.1",
+        "rimraf": "^3.0.2",
+        "semantic-release": "^22.0.12",
+        "ts-jest": "^29.1.1",
+        "typescript": "^5.3.3"
+    }
+}
